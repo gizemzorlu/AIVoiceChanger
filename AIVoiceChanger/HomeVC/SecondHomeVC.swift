@@ -8,8 +8,11 @@
 import UIKit
 import NeonSDK
 import SnapKit
+import Alamofire
 
-class HomeVC2: UIViewController, UITextViewDelegate {
+class SecondHomeVC: UIViewController, UITextViewDelegate {
+    var collectionView : VoicesCollectionView!
+
     
     let voiceTitleLabel = UILabel()
     let backButton = UIButton()
@@ -21,14 +24,12 @@ class HomeVC2: UIViewController, UITextViewDelegate {
     var selectVoiceLabel = UILabel()
     var selectVoiceButton = UIButton()
     
-    var voicesView = VoiceImageView()
-    
     var generateButton = CustomGradientButton()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI()
     }
     
@@ -81,6 +82,7 @@ class HomeVC2: UIViewController, UITextViewDelegate {
         aiResponseTextView.layer.borderColor = UIColor.black.cgColor
         aiResponseTextView.sizeToFit()
         aiResponseTextView.layer.cornerRadius = 30
+        aiResponseTextView.returnKeyType = .done
         aiResponseTextView.font = Font.custom(size: 17, fontWeight: .Light)
         aiResponseTextView.textColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
         aiResponseTextView.delegate = self
@@ -151,27 +153,7 @@ class HomeVC2: UIViewController, UITextViewDelegate {
            
         }
         
-        
-        selectVoiceButton.setTitle("See all >", for: .normal)
-        selectVoiceButton.setTitleColor(UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00), for: .normal)
-        selectVoiceButton.backgroundColor = .systemBackground
-        selectVoiceButton.titleLabel?.font = Font.custom(size: 17, fontWeight: .Medium)
-        selectVoiceButton.addTarget(self, action: #selector(seeAllVoice), for: .touchUpInside
-        )
-        view.addSubview(selectVoiceButton)
-        selectVoiceButton.snp.makeConstraints { make in
-            make.right.equalTo(aiPromptLabel)
-            make.top.equalTo(characterLimitLabel.snp.bottom).offset(24)
-            make.width.equalTo(90)
-            make.height.equalTo(22)
-        }
-        
-        
-        view.addSubview(voicesView)
-        voicesView.snp.makeConstraints { make in
-            make.top.equalTo(selectVoiceLabel.snp.bottom).offset(24)
-            make.left.right.equalToSuperview().offset(10)
-        }
+
         
         generateButton.setTitle("Generate", for: .normal)
         generateButton.setTitleColor(UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00), for: .normal)
@@ -181,27 +163,53 @@ class HomeVC2: UIViewController, UITextViewDelegate {
         view.addSubview(generateButton)
         generateButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(voicesView.bradLabel.snp.bottom).offset(43)
+            make.bottom.equalToSuperview().inset(70)
             make.width.equalTo(350)
             make.height.equalTo(60)
         }
         
         
+        collectionView = VoicesCollectionView(didSelect: { object, IndexPath in
+            print("Selected Voice: \(object.name)")
+        })
+        
+       
         
         
-        let gestureRecognizerKey = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(gestureRecognizerKey)
-        
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(selectVoiceLabel.snp.bottom).offset(24)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalTo(generateButton.snp.top).offset(-10)
+                     
+        }
         
     }
     
 
 @objc func generateButtonClicked() {
-    
-    present(destinationVC: SongGenerationVC(), slideDirection: .up)
-    
-    
+  
+  
 }
+    
+    func authenticate(usernameOrEmail: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
+        let loginURL = "https://api.fakeyou.com/login"
+        let requestBody = [
+          "username_or_email": "kamalmango7@gmail.com",
+          "password": "Darwin@#23"
+        ]
+        AF.request(loginURL, method: .post, parameters: requestBody, encoder: JSONParameterEncoder.default).response { response in
+          if let cookie = response.response?.allHeaderFields["Set-Cookie"] as? String,
+            let sessionCookie = cookie.components(separatedBy: ";").first {
+            completion(.success(sessionCookie))
+          } else {
+            completion(.failure(NSError(domain: "AuthenticationError", code: 0, userInfo: nil)))
+          }
+        }
+      }
+
+
         
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         
@@ -239,8 +247,5 @@ class HomeVC2: UIViewController, UITextViewDelegate {
        dismiss(animated: true)
     }
 
-    @objc func hideKeyboard() {
-        view.endEditing(true)
-}
 }
 

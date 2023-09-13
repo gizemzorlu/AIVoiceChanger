@@ -10,22 +10,25 @@
 		112775802AAEFDEE00AAEDCB /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 1127757F2AAEFDEE00AAEDCB /* StoreKitTestCertificate.cer */; };
 		112775822AAF001200AAEDCB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112775812AAF001200AAEDCB /* StoreKit.framework */; };
 		113848D02AAB176900D5282B /* CustomGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113848CF2AAB176900D5282B /* CustomGradientButton.swift */; };
-		113848D22AAB348800D5282B /* HomeVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113848D12AAB348800D5282B /* HomeVC2.swift */; };
-		113848D42AAB54F700D5282B /* VoiceImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113848D32AAB54F700D5282B /* VoiceImageView.swift */; };
+		113848D22AAB348800D5282B /* SecondHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113848D12AAB348800D5282B /* SecondHomeVC.swift */; };
 		113DFF4D2AAC72860002F7C2 /* SongGenerationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113DFF4C2AAC72850002F7C2 /* SongGenerationVC.swift */; };
 		113DFFCD2AAD0C66009F6EE6 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113DFFCC2AAD0C66009F6EE6 /* SettingsVC.swift */; };
 		113DFFCF2AAD1F77009F6EE6 /* SongPlayingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113DFFCE2AAD1F77009F6EE6 /* SongPlayingVC.swift */; };
 		113DFFD22AAD2273009F6EE6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113DFFD12AAD2273009F6EE6 /* AVFoundation.framework */; };
-		1156E0352AADF02100C6AC5A /* TableOrdersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156E0342AADF02100C6AC5A /* TableOrdersTableView.swift */; };
-		1156E0372AADF0D500C6AC5A /* VoicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156E0362AADF0D500C6AC5A /* VoicesTableViewCell.swift */; };
-		1156E0392AADF1AF00C6AC5A /* Voices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156E0382AADF1AF00C6AC5A /* Voices.swift */; };
+		115227C12AB19E8A00E0216E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 115227C02AB19E8A00E0216E /* Alamofire */; };
+		115227C32AB1A73B00E0216E /* VoicesModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115227C22AB1A73B00E0216E /* VoicesModal.swift */; };
+		115227C52AB1A80100E0216E /* VoicesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115227C42AB1A80100E0216E /* VoicesCollectionView.swift */; };
+		115227C72AB1A8A200E0216E /* VoicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115227C62AB1A8A200E0216E /* VoicesCollectionViewCell.swift */; };
+		115227CA2AB1C6F400E0216E /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115227C92AB1C6F400E0216E /* Globals.swift */; };
+		115227CD2AB1D45600E0216E /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115227CC2AB1D45600E0216E /* ApiHandler.swift */; };
+		1156E0392AADF1AF00C6AC5A /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156E0382AADF1AF00C6AC5A /* Song.swift */; };
 		11B2A4962AAA0CCB00A7F350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2A4952AAA0CCB00A7F350 /* AppDelegate.swift */; };
 		11B2A49A2AAA0CCB00A7F350 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2A4992AAA0CCB00A7F350 /* Onboarding.swift */; };
 		11B2A4A02AAA0CCB00A7F350 /* AIVoiceChanger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11B2A49E2AAA0CCB00A7F350 /* AIVoiceChanger.xcdatamodeld */; };
 		11B2A4A22AAA0CCB00A7F350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B2A4A12AAA0CCB00A7F350 /* Assets.xcassets */; };
 		11B2A4AE2AAA0DCD00A7F350 /* NeonSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 11B2A4AD2AAA0DCD00A7F350 /* NeonSDK */; };
 		11B2A4B02AAA0E3200A7F350 /* PaywallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2A4AF2AAA0E3200A7F350 /* PaywallVC.swift */; };
-		11B2A4B22AAA0E4000A7F350 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2A4B12AAA0E4000A7F350 /* HomeVC.swift */; };
+		11B2A4B22AAA0E4000A7F350 /* FirstHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2A4B12AAA0E4000A7F350 /* FirstHomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,15 +36,17 @@
 		1127757F2AAEFDEE00AAEDCB /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		112775812AAF001200AAEDCB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		113848CF2AAB176900D5282B /* CustomGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGradientButton.swift; sourceTree = "<group>"; };
-		113848D12AAB348800D5282B /* HomeVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC2.swift; sourceTree = "<group>"; };
-		113848D32AAB54F700D5282B /* VoiceImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceImageView.swift; sourceTree = "<group>"; };
+		113848D12AAB348800D5282B /* SecondHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHomeVC.swift; sourceTree = "<group>"; };
 		113DFF4C2AAC72850002F7C2 /* SongGenerationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongGenerationVC.swift; sourceTree = "<group>"; };
 		113DFFCC2AAD0C66009F6EE6 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		113DFFCE2AAD1F77009F6EE6 /* SongPlayingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPlayingVC.swift; sourceTree = "<group>"; };
 		113DFFD12AAD2273009F6EE6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		1156E0342AADF02100C6AC5A /* TableOrdersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOrdersTableView.swift; sourceTree = "<group>"; };
-		1156E0362AADF0D500C6AC5A /* VoicesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesTableViewCell.swift; sourceTree = "<group>"; };
-		1156E0382AADF1AF00C6AC5A /* Voices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voices.swift; sourceTree = "<group>"; };
+		115227C22AB1A73B00E0216E /* VoicesModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesModal.swift; sourceTree = "<group>"; };
+		115227C42AB1A80100E0216E /* VoicesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesCollectionView.swift; sourceTree = "<group>"; };
+		115227C62AB1A8A200E0216E /* VoicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesCollectionViewCell.swift; sourceTree = "<group>"; };
+		115227C92AB1C6F400E0216E /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		115227CC2AB1D45600E0216E /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
+		1156E0382AADF1AF00C6AC5A /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		11B2A4922AAA0CCB00A7F350 /* AIVoiceChanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIVoiceChanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B2A4952AAA0CCB00A7F350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11B2A4992AAA0CCB00A7F350 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
@@ -49,7 +54,7 @@
 		11B2A4A12AAA0CCB00A7F350 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11B2A4A62AAA0CCB00A7F350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11B2A4AF2AAA0E3200A7F350 /* PaywallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallVC.swift; sourceTree = "<group>"; };
-		11B2A4B12AAA0E4000A7F350 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		11B2A4B12AAA0E4000A7F350 /* FirstHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				112775822AAF001200AAEDCB /* StoreKit.framework in Frameworks */,
+				115227C12AB19E8A00E0216E /* Alamofire in Frameworks */,
 				113DFFD22AAD2273009F6EE6 /* AVFoundation.framework in Frameworks */,
 				11B2A4AE2AAA0DCD00A7F350 /* NeonSDK in Frameworks */,
 			);
@@ -69,8 +75,11 @@
 		1127757C2AAEFAEF00AAEDCB /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
-				11B2A4B12AAA0E4000A7F350 /* HomeVC.swift */,
-				113848D12AAB348800D5282B /* HomeVC2.swift */,
+				11B2A4B12AAA0E4000A7F350 /* FirstHomeVC.swift */,
+				113848D12AAB348800D5282B /* SecondHomeVC.swift */,
+				115227C22AB1A73B00E0216E /* VoicesModal.swift */,
+				115227C42AB1A80100E0216E /* VoicesCollectionView.swift */,
+				115227C62AB1A8A200E0216E /* VoicesCollectionViewCell.swift */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -93,6 +102,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		115227C82AB1C6E500E0216E /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				115227C92AB1C6F400E0216E /* Globals.swift */,
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
+		115227CB2AB1D43D00E0216E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				115227CC2AB1D45600E0216E /* ApiHandler.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		11B2A4892AAA0CCB00A7F350 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +138,8 @@
 		11B2A4942AAA0CCB00A7F350 /* AIVoiceChanger */ = {
 			isa = PBXGroup;
 			children = (
+				115227CB2AB1D43D00E0216E /* Network */,
+				115227C82AB1C6E500E0216E /* Globals */,
 				11B2A4952AAA0CCB00A7F350 /* AppDelegate.swift */,
 				11B2A4992AAA0CCB00A7F350 /* Onboarding.swift */,
 				11B2A4AF2AAA0E3200A7F350 /* PaywallVC.swift */,
@@ -123,10 +150,7 @@
 				11B2A4A62AAA0CCB00A7F350 /* Info.plist */,
 				11B2A49E2AAA0CCB00A7F350 /* AIVoiceChanger.xcdatamodeld */,
 				113848CF2AAB176900D5282B /* CustomGradientButton.swift */,
-				113848D32AAB54F700D5282B /* VoiceImageView.swift */,
-				1156E0342AADF02100C6AC5A /* TableOrdersTableView.swift */,
-				1156E0362AADF0D500C6AC5A /* VoicesTableViewCell.swift */,
-				1156E0382AADF1AF00C6AC5A /* Voices.swift */,
+				1156E0382AADF1AF00C6AC5A /* Song.swift */,
 				1127757E2AAEFD2600AAEDCB /* Configuration.storekit */,
 				1127757F2AAEFDEE00AAEDCB /* StoreKitTestCertificate.cer */,
 			);
@@ -151,6 +175,7 @@
 			name = AIVoiceChanger;
 			packageProductDependencies = (
 				11B2A4AD2AAA0DCD00A7F350 /* NeonSDK */,
+				115227C02AB19E8A00E0216E /* Alamofire */,
 			);
 			productName = AIVoiceChanger;
 			productReference = 11B2A4922AAA0CCB00A7F350 /* AIVoiceChanger.app */;
@@ -182,6 +207,7 @@
 			mainGroup = 11B2A4892AAA0CCB00A7F350;
 			packageReferences = (
 				11B2A4AC2AAA0DCD00A7F350 /* XCRemoteSwiftPackageReference "neon-sdk" */,
+				115227BF2AB19E8A00E0216E /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 11B2A4932AAA0CCB00A7F350 /* Products */;
 			projectDirPath = "";
@@ -209,19 +235,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1156E0352AADF02100C6AC5A /* TableOrdersTableView.swift in Sources */,
-				113848D42AAB54F700D5282B /* VoiceImageView.swift in Sources */,
+				115227CD2AB1D45600E0216E /* ApiHandler.swift in Sources */,
 				11B2A49A2AAA0CCB00A7F350 /* Onboarding.swift in Sources */,
 				113848D02AAB176900D5282B /* CustomGradientButton.swift in Sources */,
-				1156E0372AADF0D500C6AC5A /* VoicesTableViewCell.swift in Sources */,
-				1156E0392AADF1AF00C6AC5A /* Voices.swift in Sources */,
+				1156E0392AADF1AF00C6AC5A /* Song.swift in Sources */,
 				113DFF4D2AAC72860002F7C2 /* SongGenerationVC.swift in Sources */,
-				11B2A4B22AAA0E4000A7F350 /* HomeVC.swift in Sources */,
+				115227C72AB1A8A200E0216E /* VoicesCollectionViewCell.swift in Sources */,
+				115227C52AB1A80100E0216E /* VoicesCollectionView.swift in Sources */,
+				11B2A4B22AAA0E4000A7F350 /* FirstHomeVC.swift in Sources */,
 				11B2A4B02AAA0E3200A7F350 /* PaywallVC.swift in Sources */,
 				11B2A4962AAA0CCB00A7F350 /* AppDelegate.swift in Sources */,
 				113DFFCF2AAD1F77009F6EE6 /* SongPlayingVC.swift in Sources */,
 				11B2A4A02AAA0CCB00A7F350 /* AIVoiceChanger.xcdatamodeld in Sources */,
-				113848D22AAB348800D5282B /* HomeVC2.swift in Sources */,
+				115227C32AB1A73B00E0216E /* VoicesModal.swift in Sources */,
+				115227CA2AB1C6F400E0216E /* Globals.swift in Sources */,
+				113848D22AAB348800D5282B /* SecondHomeVC.swift in Sources */,
 				113DFFCD2AAD0C66009F6EE6 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +449,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		115227BF2AB19E8A00E0216E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		11B2A4AC2AAA0DCD00A7F350 /* XCRemoteSwiftPackageReference "neon-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/neon-apps/neon-sdk.git";
@@ -432,6 +468,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		115227C02AB19E8A00E0216E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 115227BF2AB19E8A00E0216E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		11B2A4AD2AAA0DCD00A7F350 /* NeonSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 11B2A4AC2AAA0DCD00A7F350 /* XCRemoteSwiftPackageReference "neon-sdk" */;

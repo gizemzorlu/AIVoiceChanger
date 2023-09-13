@@ -71,7 +71,6 @@ class Onboarding: UIViewController {
             subtitleLabel.textAlignment = .center
             subtitleLabel.textColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
             subtitleLabel.numberOfLines = 0
-//            subtitleLabel.sizeToFit()
             subtitleLabel.font = Font.custom(size: 20, fontWeight: .Medium)
             
             view.addSubview(subtitleLabel)

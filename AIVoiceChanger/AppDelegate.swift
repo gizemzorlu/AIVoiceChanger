@@ -16,6 +16,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let trump = VoicesModal(name: "Trump", image: "trump")
+        
+        let obama = VoicesModal(name: "Obama", image: "obama")
+        
+        let taylor = VoicesModal(name: "Taylor", image: "taylor")
+        
+        let elon = VoicesModal(name: "Elon", image: "elon")
+        
+        let johnny = VoicesModal(name: "Johnny", image: "johnny")
+        
+        let brad = VoicesModal(name: "Brad", image: "brad")
+        
+        let celebrity = VoicesModal(name: "Celebrity", image: "celebrity")
+       
+        let dualipa = VoicesModal(name: "Dua Lipa", image: "dualipa")
+        
+        let celebrity2 = VoicesModal(name: "Celebrity", image: "celebrity2")
+        
+        let celebrity3 = VoicesModal(name: "Celebrity", image: "celebrity3")
+        
+            Globals.arrVoices.append(trump)
+            Globals.arrVoices.append(obama)
+            Globals.arrVoices.append(taylor)
+            Globals.arrVoices.append(elon)
+            Globals.arrVoices.append(johnny)
+            Globals.arrVoices.append(brad)
+            Globals.arrVoices.append(celebrity)
+            Globals.arrVoices.append(dualipa)
+            Globals.arrVoices.append(celebrity2)
+            Globals.arrVoices.append(celebrity3)
+        
 
         Font.configureFonts(font: .Poppins)
     
@@ -24,7 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         ])
         
-        Neon.configure(window: &window, onboardingVC: Onboarding(), paywallVC: PaywallVC(), homeVC: HomeVC())
+        
+        
+        Neon.configure(window: &window, onboardingVC: Onboarding(), paywallVC: PaywallVC(), homeVC: FirstHomeVC())
         return true
     }
 

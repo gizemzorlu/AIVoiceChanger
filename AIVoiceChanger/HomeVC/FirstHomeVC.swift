@@ -9,7 +9,7 @@ import UIKit
 import NeonSDK
 import SnapKit
 
-class HomeVC: UIViewController {
+class FirstHomeVC: UIViewController {
     
     let voiceTitleLabel = UILabel()
     let settingsButton = UIButton()
@@ -122,7 +122,7 @@ class HomeVC: UIViewController {
     
     @objc func generateButtonClicked() {
         
-        present(destinationVC: HomeVC2(), slideDirection: .up)
+        present(destinationVC: SecondHomeVC(), slideDirection: .up)
         
         
     }

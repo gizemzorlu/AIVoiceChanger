@@ -308,7 +308,7 @@ class PaywallVC: UIViewController {
     
     @objc func withoutPurchaseButtonClicked() {
         
-        present(destinationVC: HomeVC(), slideDirection: .right)
+        present(destinationVC: FirstHomeVC(), slideDirection: .right)
         
     }
     
@@ -317,7 +317,7 @@ class PaywallVC: UIViewController {
         RevenueCatManager.selectPackage(id: "com.neonapps.education.SwiftyStoreKitDemo.Montly")
         
         RevenueCatManager.purchase(animation: .loadingBar) {
-            let vc = HomeVC()
+            let vc = FirstHomeVC()
             self.present(destinationVC: vc, slideDirection: .right)
         } completionFailure: {
             print("purchase error")
