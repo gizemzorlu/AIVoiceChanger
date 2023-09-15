@@ -17,6 +17,7 @@ class FirstHomeVC: UIViewController {
     var phraseLabel = UILabel()
     let vectorImage = UIImageView()
     var generateButton = CustomGradientButton()
+    let backButton = UIButton()
     
 
     override func viewDidLoad() {
@@ -110,7 +111,20 @@ class FirstHomeVC: UIViewController {
             make.height.equalTo(60)
         }
         
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
+
+      
+        view.addSubview(backButton)
+        backButton.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+         
+        }
         
+    }
+    
+    @objc func backButtonClicked() {
+        present(destinationVC: SongPlayingVC(), slideDirection: .right)
     }
     
     
@@ -126,5 +140,6 @@ class FirstHomeVC: UIViewController {
         
         
     }
+    
 
 }

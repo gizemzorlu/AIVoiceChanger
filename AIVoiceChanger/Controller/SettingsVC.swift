@@ -19,14 +19,10 @@ class SettingsVC: UIViewController {
     let contactButton = UIButton()
     let termsButton = UIButton()
     let privacyButton = UIButton()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         createUI()
-        
     }
     
     func createUI() {
@@ -38,7 +34,6 @@ class SettingsVC: UIViewController {
        settingsTitleLabel.textColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
        settingsTitleLabel.sizeToFit()
        settingsTitleLabel.font = Font.custom(size: 22, fontWeight: .Bold)
-        
         view.addSubview(settingsTitleLabel)
        settingsTitleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -50,8 +45,6 @@ class SettingsVC: UIViewController {
         
         backButton.setImage(UIImage(named: "back"), for: .normal)
         backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
-
-      
         view.addSubview(backButton)
         backButton.snp.makeConstraints { make in
             make.top.equalTo(settingsTitleLabel)

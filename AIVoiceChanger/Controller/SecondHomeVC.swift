@@ -11,9 +11,8 @@ import SnapKit
 import Alamofire
 
 class SecondHomeVC: UIViewController, UITextViewDelegate {
-    var collectionView : VoicesCollectionView!
+    var voicesCollectionView : VoicesCollectionView!
 
-    
     let voiceTitleLabel = UILabel()
     let backButton = UIButton()
     var aiPromptLabel = UILabel()
@@ -167,17 +166,16 @@ class SecondHomeVC: UIViewController, UITextViewDelegate {
             make.width.equalTo(350)
             make.height.equalTo(60)
         }
-        
-        
-        collectionView = VoicesCollectionView(didSelect: { object, IndexPath in
-            print("Selected Voice: \(object.name)")
-        })
-        
        
         
+        voicesCollectionView = VoicesCollectionView(didSelect: { object, IndexPath in
+            print("Selected Voice: \(object.uuid)")
+            Globals.selectedVoiceUUID = object.uuid
+            
+        })
         
-        view.addSubview(collectionView)
-        collectionView.snp.makeConstraints { make in
+        view.addSubview(voicesCollectionView)
+        voicesCollectionView.snp.makeConstraints { make in
             make.top.equalTo(selectVoiceLabel.snp.bottom).offset(24)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
@@ -189,25 +187,16 @@ class SecondHomeVC: UIViewController, UITextViewDelegate {
     
 
 @objc func generateButtonClicked() {
-  
-  
-}
     
-    func authenticate(usernameOrEmail: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
-        let loginURL = "https://api.fakeyou.com/login"
-        let requestBody = [
-          "username_or_email": "kamalmango7@gmail.com",
-          "password": "Darwin@#23"
-        ]
-        AF.request(loginURL, method: .post, parameters: requestBody, encoder: JSONParameterEncoder.default).response { response in
-          if let cookie = response.response?.allHeaderFields["Set-Cookie"] as? String,
-            let sessionCookie = cookie.components(separatedBy: ";").first {
-            completion(.success(sessionCookie))
-          } else {
-            completion(.failure(NSError(domain: "AuthenticationError", code: 0, userInfo: nil)))
-          }
-        }
-      }
+    ApiHandler.sendTTS(message : aiResponseTextView.text)
+//    present(destinationVC: SongGenerationVC(), slideDirection: .right)
+    
+    
+
+    }
+  
+    
+
 
 
         

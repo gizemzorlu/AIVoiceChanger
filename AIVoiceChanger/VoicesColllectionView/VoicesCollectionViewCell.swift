@@ -25,7 +25,6 @@ class VoicesCollectionViewCell: NeonCollectionViewCell<VoicesModal> {
     }
     
     
-    
     private func setupSubviews() {
         
         voiceView.backgroundColor = UIColor(red: 0.91, green: 0.91, blue: 0.91, alpha: 1.00)
