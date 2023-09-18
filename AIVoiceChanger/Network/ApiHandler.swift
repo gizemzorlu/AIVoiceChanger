@@ -135,6 +135,7 @@ public class ApiHandler {
         print("Voice Last URL: \(Globals.resultVoiceURL)")
         
     }
+    
   
         
     }

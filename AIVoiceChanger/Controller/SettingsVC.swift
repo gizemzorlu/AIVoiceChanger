@@ -23,6 +23,7 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
+        isUserPremium() 
     }
     
     func createUI() {
@@ -55,7 +56,7 @@ class SettingsVC: UIViewController {
         premiumButton.setTitle("Premium", for: .normal)
         premiumButton.titleLabel?.textAlignment = .left
         premiumButton.setTitleColor(UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00), for: .normal)
-        
+        premiumButton.isHidden = false
         premiumButton.sizeToFit()
    
         premiumButton.addTarget(self, action: #selector(premiumButtonClicked), for: .touchUpInside)
@@ -136,6 +137,12 @@ class SettingsVC: UIViewController {
             make.left.equalTo(premiumButton)
             make.top.equalTo(termsButton.snp.bottom).offset(32)
             make.height.equalTo(25)
+        }
+    }
+    
+    func isUserPremium() {
+        if Neon.isUserPremium {
+            premiumButton.isHidden = true
         }
     }
     

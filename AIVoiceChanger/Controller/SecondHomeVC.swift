@@ -8,13 +8,13 @@
 import UIKit
 import NeonSDK
 import SnapKit
-import Alamofire
 
 class SecondHomeVC: UIViewController, UITextViewDelegate {
     var voicesCollectionView : VoicesCollectionView!
 
     let voiceTitleLabel = UILabel()
     let backButton = UIButton()
+    let nextButton = UIButton()
     var aiPromptLabel = UILabel()
     var aiResponseTextView = UITextView()
     var placeholderLabel = UILabel()
@@ -22,6 +22,8 @@ class SecondHomeVC: UIViewController, UITextViewDelegate {
     var characterCountLabel = UILabel()
     var selectVoiceLabel = UILabel()
     var selectVoiceButton = UIButton()
+    
+    let songPlayingVC = SongPlayingVC()
     
     var generateButton = CustomGradientButton()
     
@@ -49,6 +51,17 @@ class SecondHomeVC: UIViewController, UITextViewDelegate {
             make.width.equalTo(150)
             make.height.equalTo(28)
           
+        }
+        
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
+
+      
+        view.addSubview(backButton)
+        backButton.snp.makeConstraints { make in
+            make.top.equalTo(voiceTitleLabel)
+            make.left.equalToSuperview().offset(36)
+         
         }
         
         backButton.setImage(UIImage(named: "back"), for: .normal)
@@ -127,7 +140,6 @@ class SecondHomeVC: UIViewController, UITextViewDelegate {
         characterCountLabel.textAlignment = .right
         characterCountLabel.textColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
         characterCountLabel.font = Font.custom(size: 13, fontWeight: .Light)
-        
         view.addSubview(characterCountLabel)
         characterCountLabel.snp.makeConstraints { make in
             make.right.equalTo(aiPromptLabel)
@@ -142,7 +154,6 @@ class SecondHomeVC: UIViewController, UITextViewDelegate {
         selectVoiceLabel.textAlignment = .left
         selectVoiceLabel.textColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
         selectVoiceLabel.font = Font.custom(size: 17, fontWeight: .Medium)
-        
         view.addSubview(selectVoiceLabel)
         selectVoiceLabel.snp.makeConstraints { make in
             make.left.equalTo(aiPromptLabel)
@@ -171,9 +182,11 @@ class SecondHomeVC: UIViewController, UITextViewDelegate {
         voicesCollectionView = VoicesCollectionView(didSelect: { object, IndexPath in
             print("Selected Voice: \(object.uuid)")
             Globals.selectedVoiceUUID = object.uuid
+
             
+            self.songPlayingVC.voiceLabel.text = object.name
+            self.songPlayingVC.voiceImage.image = UIImage(named: object.image)
         })
-        
         view.addSubview(voicesCollectionView)
         voicesCollectionView.snp.makeConstraints { make in
             make.top.equalTo(selectVoiceLabel.snp.bottom).offset(24)
@@ -189,10 +202,8 @@ class SecondHomeVC: UIViewController, UITextViewDelegate {
 @objc func generateButtonClicked() {
     
     ApiHandler.sendTTS(message : aiResponseTextView.text)
-//    present(destinationVC: SongGenerationVC(), slideDirection: .right)
+    present(destinationVC: SongGenerationVC(), slideDirection: .right)
     
-    
-
     }
   
     
