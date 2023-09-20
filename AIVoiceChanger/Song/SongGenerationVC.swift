@@ -7,12 +7,15 @@
 
 import UIKit
 import NeonSDK
+import Firebase
 
 class SongGenerationVC: UIViewController {
     
     let generatingTitleLabel = UILabel()
     let declarationLabel = UILabel()
-    let backButton = UIButton()
+    let vc = SongPlayingVC()
+    var selectedVoiceImage = ""
+    var selectedVoiceName = ""
     
     var timer : Timer?
 
@@ -40,16 +43,6 @@ class SongGenerationVC: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(100)
             make.width.equalTo(351)
-          
-        }
-        
-        backButton.setImage(UIImage(named: "back"), for: .normal)
-        backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
-        view.addSubview(backButton)
-        backButton.snp.makeConstraints { make in
-            make.top.equalTo(generatingTitleLabel)
-            make.left.equalToSuperview().offset(36)
-
         }
         
         let lottie = LottieManager.createLottie(animation: .loadingCircle3)
@@ -59,7 +52,6 @@ class SongGenerationVC: UIViewController {
             make.width.height.equalTo(200)
         }
                                    
-        
         declarationLabel.text = "Please wait while we're generating your song \nkeep the app open"
         declarationLabel.textAlignment = .center
         declarationLabel.numberOfLines = 0
@@ -73,12 +65,6 @@ class SongGenerationVC: UIViewController {
             make.bottom.equalToSuperview().inset(45)
             make.width.equalTo(300)
         }
-    
-        
-    }
-    
-    @objc func backButtonClicked() {
-        dismiss(animated: true)
     }
     
     func timerFunc() {
@@ -95,7 +81,36 @@ class SongGenerationVC: UIViewController {
         func presentSongPlayingVC() {
             if Globals.resultVoiceURL != "" {
                 
-                present(destinationVC: SecondHomeVC().songPlayingVC, slideDirection: .right)
+                vc.voiceImage.image = UIImage(named: selectedVoiceImage)
+                vc.voiceName.text = selectedVoiceName
+                vc.savedVoiceURL = Globals.resultVoiceURL
+                present(destinationVC: vc, slideDirection: .right)
+                uploadFirebase()
+                Globals.choosenUUID = ""
+                GetDataFirestore.getDataFromFirestore()
             }
         }
+    
+    func uploadFirebase() {
+        
+        let db = Firestore.firestore()
+        
+        let data: [String: Any] = [
+            "id": UUID().uuidString,
+            "voiceName": Globals.choosenName,
+            "voiceImage": Globals.choosenImage,
+            "promptText": Globals.promptText,
+            "voiceURL": Globals.resultVoiceURL,
+            "createdAt": FieldValue.serverTimestamp(),
+            "selectedVoiceUUID": Globals.choosenUUID,
+        ]
+        
+        db.collection("Songs").addDocument(data: data) { error in
+            if let error = error {
+                print("Firestore veri ekleme hatası: \(error.localizedDescription)")
+            } else {
+                print("Firestore veri eklendi.")
+            }
+        }
+    }
 }

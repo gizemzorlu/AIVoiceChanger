@@ -41,7 +41,6 @@ class SettingsVC: UIViewController {
             make.top.equalToSuperview().offset(100)
             make.width.equalTo(150)
             make.height.equalTo(28)
-          
         }
         
         backButton.setImage(UIImage(named: "back"), for: .normal)
@@ -50,7 +49,6 @@ class SettingsVC: UIViewController {
         backButton.snp.makeConstraints { make in
             make.top.equalTo(settingsTitleLabel)
             make.left.equalToSuperview().offset(36)
-         
         }
         
         premiumButton.setTitle("Premium", for: .normal)
@@ -58,24 +56,19 @@ class SettingsVC: UIViewController {
         premiumButton.setTitleColor(UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00), for: .normal)
         premiumButton.isHidden = false
         premiumButton.sizeToFit()
-   
         premiumButton.addTarget(self, action: #selector(premiumButtonClicked), for: .touchUpInside)
-        
         view.addSubview(premiumButton)
         premiumButton.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(52)
             make.top.equalTo(settingsTitleLabel.snp.bottom).offset(43)
             make.height.equalTo(25)
-            
         }
         
         shareButton.setTitle("Share app", for: .normal)
         shareButton.titleLabel?.textAlignment = .left
         shareButton.setTitleColor(UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00), for: .normal)
         shareButton.sizeToFit()
-   
         shareButton.addTarget(self, action: #selector(shareButtonClicked), for: .touchUpInside)
-        
         view.addSubview(shareButton)
         shareButton.snp.makeConstraints { make in
             make.left.equalTo(premiumButton)
@@ -86,10 +79,8 @@ class SettingsVC: UIViewController {
         rateButton.setTitle("Rate us", for: .normal)
         rateButton.titleLabel?.textAlignment = .left
         rateButton.setTitleColor(UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00), for: .normal)
-   
         rateButton.sizeToFit()
         rateButton.addTarget(self, action: #selector(rateButtonClicked), for: .touchUpInside)
-        
         view.addSubview(rateButton)
         rateButton.snp.makeConstraints { make in
             make.left.equalTo(premiumButton)
@@ -100,10 +91,8 @@ class SettingsVC: UIViewController {
         contactButton.setTitle("Contact us", for: .normal)
         contactButton.titleLabel?.textAlignment = .left
         contactButton.setTitleColor(UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00), for: .normal)
-   
         contactButton.sizeToFit()
         contactButton.addTarget(self, action: #selector(contactButtonClicked), for: .touchUpInside)
-        
         view.addSubview(contactButton)
         contactButton.snp.makeConstraints { make in
             make.left.equalTo(premiumButton)
@@ -114,10 +103,8 @@ class SettingsVC: UIViewController {
         termsButton.setTitle("Terms of service", for: .normal)
         termsButton.titleLabel?.textAlignment = .left
         termsButton.setTitleColor(UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00), for: .normal)
-   
         termsButton.sizeToFit()
         termsButton.addTarget(self, action: #selector(termsButtonClicked), for: .touchUpInside)
-        
         view.addSubview(termsButton)
         termsButton.snp.makeConstraints { make in
             make.left.equalTo(premiumButton)
@@ -128,10 +115,8 @@ class SettingsVC: UIViewController {
         privacyButton.setTitle("Privacy policy", for: .normal)
         privacyButton.titleLabel?.textAlignment = .left
         privacyButton.setTitleColor(UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00), for: .normal)
-   
         privacyButton.sizeToFit()
         privacyButton.addTarget(self, action: #selector(privacyButtonClicked), for: .touchUpInside)
-        
         view.addSubview(privacyButton)
         privacyButton.snp.makeConstraints { make in
             make.left.equalTo(premiumButton)
@@ -156,14 +141,11 @@ class SettingsVC: UIViewController {
         present(destinationVC: PaywallVC(), slideDirection: .down)
     }
     
-    
     @objc func shareButtonClicked() {
         
         let shareText = "Hey, check out this cool app!"
            let shareURL = URL(string: "https://www.example.com/your-app")
-           
            let activityViewController = UIActivityViewController(activityItems: [shareText, shareURL as Any], applicationActivities: nil)
-           
            if let popoverController = activityViewController.popoverPresentationController {
                popoverController.sourceView = self.view
                popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
@@ -171,18 +153,12 @@ class SettingsVC: UIViewController {
            }
            
            present(activityViewController, animated: true, completion: nil)
-        
     }
     
-    
     @objc func rateButtonClicked() {
-        
         if let rateURL = URL(string: "tms-apps://itunes.apple.com/app/your-app-id") {
               UIApplication.shared.open(rateURL, options: [:], completionHandler: nil)
-            
             }
-
-        
     }
     
     @objc func contactButtonClicked() {
@@ -198,13 +174,10 @@ class SettingsVC: UIViewController {
     @objc func termsButtonClicked() {
         
         SettingsManager.openLinkFromBrowser(url: "https://www.neonapps.co/terms-of-use")
-        
     }
     
     @objc func privacyButtonClicked() {
         
         SettingsManager.openLinkFromBrowser(url: "https://www.neonapps.co/privacy-policy")
-        
     }
-
 }

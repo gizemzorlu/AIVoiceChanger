@@ -23,11 +23,10 @@
 		115227CD2AB1D45600E0216E /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115227CC2AB1D45600E0216E /* ApiHandler.swift */; };
 		115342252AB31A4B00AB0543 /* AllSongsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115342242AB31A4B00AB0543 /* AllSongsVC.swift */; };
 		1156E0392AADF1AF00C6AC5A /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156E0382AADF1AF00C6AC5A /* Song.swift */; };
-		11723CDC2AB8516A00189887 /* SongsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11723CDB2AB8516A00189887 /* SongsCollectionView.swift */; };
+		117030E32ABAF6AA007C41D0 /* GetDataFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117030E22ABAF6A9007C41D0 /* GetDataFirestore.swift */; };
+		117030E62ABB0B30007C41D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 117030E52ABB0B30007C41D0 /* GoogleService-Info.plist */; };
 		11723CDE2AB851B100189887 /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11723CDD2AB851B100189887 /* SongsCollectionViewCell.swift */; };
-		1172C3872AB47602008496E1 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1172C3862AB47602008496E1 /* FirebaseManager.swift */; };
-		1172C3892AB47854008496E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1172C3882AB47854008496E1 /* GoogleService-Info.plist */; };
-		1172C38D2AB47E5E008496E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1172C38C2AB47E5E008496E1 /* GoogleService-Info.plist */; };
+		11723CE22AB8746000189887 /* SavedSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11723CE12AB8746000189887 /* SavedSongs.swift */; };
 		11B2A4962AAA0CCB00A7F350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2A4952AAA0CCB00A7F350 /* AppDelegate.swift */; };
 		11B2A49A2AAA0CCB00A7F350 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2A4992AAA0CCB00A7F350 /* Onboarding.swift */; };
 		11B2A4A02AAA0CCB00A7F350 /* AIVoiceChanger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11B2A49E2AAA0CCB00A7F350 /* AIVoiceChanger.xcdatamodeld */; };
@@ -54,11 +53,10 @@
 		115227CC2AB1D45600E0216E /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
 		115342242AB31A4B00AB0543 /* AllSongsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSongsVC.swift; sourceTree = "<group>"; };
 		1156E0382AADF1AF00C6AC5A /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
-		11723CDB2AB8516A00189887 /* SongsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionView.swift; sourceTree = "<group>"; };
+		117030E22ABAF6A9007C41D0 /* GetDataFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataFirestore.swift; sourceTree = "<group>"; };
+		117030E52ABB0B30007C41D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11723CDD2AB851B100189887 /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
-		1172C3862AB47602008496E1 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
-		1172C3882AB47854008496E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		1172C38C2AB47E5E008496E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		11723CE12AB8746000189887 /* SavedSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSongs.swift; sourceTree = "<group>"; };
 		11B2A4922AAA0CCB00A7F350 /* AIVoiceChanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIVoiceChanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B2A4952AAA0CCB00A7F350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11B2A4992AAA0CCB00A7F350 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 		113DFFD02AAD2273009F6EE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1172C3882AB47854008496E1 /* GoogleService-Info.plist */,
 				112775812AAF001200AAEDCB /* StoreKit.framework */,
 				113DFFD12AAD2273009F6EE6 /* AVFoundation.framework */,
 			);
@@ -126,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				115227CC2AB1D45600E0216E /* ApiHandler.swift */,
-				1172C3862AB47602008496E1 /* FirebaseManager.swift */,
+				117030E22ABAF6A9007C41D0 /* GetDataFirestore.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -140,10 +137,50 @@
 			path = VoicesColllectionView;
 			sourceTree = "<group>";
 		};
+		117030D12ABAE58D007C41D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				113848CF2AAB176900D5282B /* CustomGradientButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		117030D22ABAE5B0007C41D0 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				11B2A4952AAA0CCB00A7F350 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		117030D32ABAE5BD007C41D0 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				11B2A4992AAA0CCB00A7F350 /* Onboarding.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		117030D42ABAE5CD007C41D0 /* Paywall */ = {
+			isa = PBXGroup;
+			children = (
+				11B2A4AF2AAA0E3200A7F350 /* PaywallVC.swift */,
+			);
+			path = Paywall;
+			sourceTree = "<group>";
+		};
+		117030E12ABAE8DA007C41D0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				11B2A49E2AAA0CCB00A7F350 /* AIVoiceChanger.xcdatamodeld */,
+				11B2A4A12AAA0CCB00A7F350 /* Assets.xcassets */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		11723CDF2AB852E100189887 /* SongsCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				11723CDB2AB8516A00189887 /* SongsCollectionView.swift */,
 				11723CDD2AB851B100189887 /* SongsCollectionViewCell.swift */,
 			);
 			path = SongsCollectionView;
@@ -152,6 +189,7 @@
 		11A283A42AB471F900BE06D7 /* Modals */ = {
 			isa = PBXGroup;
 			children = (
+				11723CE12AB8746000189887 /* SavedSongs.swift */,
 				115227C22AB1A73B00E0216E /* VoicesModal.swift */,
 				1156E0382AADF1AF00C6AC5A /* Song.swift */,
 			);
@@ -178,23 +216,22 @@
 		11B2A4942AAA0CCB00A7F350 /* AIVoiceChanger */ = {
 			isa = PBXGroup;
 			children = (
+				117030E12ABAE8DA007C41D0 /* Helper */,
+				11B2A4A62AAA0CCB00A7F350 /* Info.plist */,
+				1127757F2AAEFDEE00AAEDCB /* StoreKitTestCertificate.cer */,
+				1127757E2AAEFD2600AAEDCB /* Configuration.storekit */,
+				117030E52ABB0B30007C41D0 /* GoogleService-Info.plist */,
 				11A283A42AB471F900BE06D7 /* Modals */,
 				115227CB2AB1D43D00E0216E /* Network */,
 				115227C82AB1C6E500E0216E /* Globals */,
-				11B2A4952AAA0CCB00A7F350 /* AppDelegate.swift */,
-				11B2A4992AAA0CCB00A7F350 /* Onboarding.swift */,
-				11B2A4AF2AAA0E3200A7F350 /* PaywallVC.swift */,
+				117030D22ABAE5B0007C41D0 /* AppDelegate */,
+				117030D32ABAE5BD007C41D0 /* Onboarding */,
+				117030D42ABAE5CD007C41D0 /* Paywall */,
 				1127757C2AAEFAEF00AAEDCB /* Controller */,
 				1127757D2AAEFB1500AAEDCB /* Song */,
 				115227D02AB2194400E0216E /* VoicesColllectionView */,
 				11723CDF2AB852E100189887 /* SongsCollectionView */,
-				11B2A49E2AAA0CCB00A7F350 /* AIVoiceChanger.xcdatamodeld */,
-				11B2A4A12AAA0CCB00A7F350 /* Assets.xcassets */,
-				1127757E2AAEFD2600AAEDCB /* Configuration.storekit */,
-				11B2A4A62AAA0CCB00A7F350 /* Info.plist */,
-				1172C38C2AB47E5E008496E1 /* GoogleService-Info.plist */,
-				1127757F2AAEFDEE00AAEDCB /* StoreKitTestCertificate.cer */,
-				113848CF2AAB176900D5282B /* CustomGradientButton.swift */,
+				117030D12ABAE58D007C41D0 /* View */,
 			);
 			path = AIVoiceChanger;
 			sourceTree = "<group>";
@@ -266,9 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				11B2A4A22AAA0CCB00A7F350 /* Assets.xcassets in Resources */,
-				1172C38D2AB47E5E008496E1 /* GoogleService-Info.plist in Resources */,
 				112775802AAEFDEE00AAEDCB /* StoreKitTestCertificate.cer in Resources */,
-				1172C3892AB47854008496E1 /* GoogleService-Info.plist in Resources */,
+				117030E62ABB0B30007C41D0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +320,6 @@
 				113848D02AAB176900D5282B /* CustomGradientButton.swift in Sources */,
 				115342252AB31A4B00AB0543 /* AllSongsVC.swift in Sources */,
 				1156E0392AADF1AF00C6AC5A /* Song.swift in Sources */,
-				11723CDC2AB8516A00189887 /* SongsCollectionView.swift in Sources */,
 				113DFF4D2AAC72860002F7C2 /* SongGenerationVC.swift in Sources */,
 				115227C72AB1A8A200E0216E /* VoicesCollectionViewCell.swift in Sources */,
 				115227C52AB1A80100E0216E /* VoicesCollectionView.swift in Sources */,
@@ -293,11 +328,12 @@
 				11723CDE2AB851B100189887 /* SongsCollectionViewCell.swift in Sources */,
 				11B2A4962AAA0CCB00A7F350 /* AppDelegate.swift in Sources */,
 				113DFFCF2AAD1F77009F6EE6 /* SongPlayingVC.swift in Sources */,
-				1172C3872AB47602008496E1 /* FirebaseManager.swift in Sources */,
+				11723CE22AB8746000189887 /* SavedSongs.swift in Sources */,
 				11B2A4A02AAA0CCB00A7F350 /* AIVoiceChanger.xcdatamodeld in Sources */,
 				115227C32AB1A73B00E0216E /* VoicesModal.swift in Sources */,
 				115227CA2AB1C6F400E0216E /* Globals.swift in Sources */,
 				113848D22AAB348800D5282B /* SecondHomeVC.swift in Sources */,
+				117030E32ABAF6AA007C41D0 /* GetDataFirestore.swift in Sources */,
 				113DFFCD2AAD0C66009F6EE6 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

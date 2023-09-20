@@ -18,7 +18,6 @@ class SongPlayingVC: UIViewController {
     
     let voiceTitleLabel = UILabel()
     let backButton = UIButton()
-    let nextButton = UIButton()
     var firstTimeClicked = false
     var timer = Timer()
     
@@ -37,28 +36,24 @@ class SongPlayingVC: UIViewController {
     
     var countTime = 0
     
-    
-    
+    var savedVoiceURL = ""
+
     let shareButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
-        
     }
     
     func setupUI() {
         
         view.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
         
-        
-        if let globalURL = URL(string: Globals.resultVoiceURL) {
-            loadSong(songURL: globalURL.absoluteString)
+        if let voiceURL = URL(string: savedVoiceURL) {
+            loadSong(songURL: voiceURL.absoluteString)
         }
-        
-        
-        
+    
         voiceTitleLabel.text = "AI Voices"
         voiceTitleLabel.textAlignment = .center
         voiceTitleLabel.textColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
@@ -70,7 +65,6 @@ class SongPlayingVC: UIViewController {
             make.top.equalToSuperview().offset(100)
             make.width.equalTo(150)
             make.height.equalTo(28)
-            
         }
         
         backButton.setImage(UIImage(named: "back"), for: .normal)
@@ -79,21 +73,8 @@ class SongPlayingVC: UIViewController {
         backButton.snp.makeConstraints { make in
             make.top.equalTo(voiceTitleLabel)
             make.left.equalToSuperview().offset(36)
-            
         }
-        
-        nextButton.setImage(UIImage(systemName: "arrowshape.forward"), for: .normal)
-        nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
-        
-        
-        view.addSubview(nextButton)
-        nextButton.snp.makeConstraints { make in
-            make.top.equalTo(voiceTitleLabel)
-            make.right.equalToSuperview().offset(-36)
-            
-        }
-        
-        
+    
         voiceView.backgroundColor = UIColor(red: 0.91, green: 0.91, blue: 0.91, alpha: 1.00)
         voiceView.layer.cornerRadius = 75
         voiceView.layer.borderWidth = 6
@@ -110,9 +91,7 @@ class SongPlayingVC: UIViewController {
             make.height.equalTo(163)
         }
         
-        
         voiceView.addSubview(voiceImage)
-        
         voiceImage.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
             make.width.height.equalTo(180)
@@ -206,7 +185,6 @@ class SongPlayingVC: UIViewController {
             make.top.equalTo(voiceName).offset(100)
             make.width.equalTo(80)
             make.height.equalTo(99)
-            
         }
         
         playImageView.image = UIImage(named: "play")
@@ -216,9 +194,7 @@ class SongPlayingVC: UIViewController {
             make.centerX.equalToSuperview()
             make.width.equalTo(33)
             make.height.equalTo(43)
-            
         }
-        
         
         shareButton.setTitle("Share", for: .normal)
         shareButton.titleLabel?.font = Font.custom(size: 17, fontWeight: .Medium)
@@ -235,8 +211,6 @@ class SongPlayingVC: UIViewController {
             make.width.equalTo(350)
             make.height.equalTo(60)
         }
-        
-        
     }
     
     func loadSong(songURL: String) {
@@ -305,7 +279,6 @@ class SongPlayingVC: UIViewController {
             
             let time2: CMTime = CMTimeMake(value: Int64(newTime * 1000 as Float64), timescale: 1000)
             player!.seek(to: time2, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
-            
         }
     }
     
@@ -319,11 +292,11 @@ class SongPlayingVC: UIViewController {
         }
         let time2: CMTime = CMTimeMake(value: Int64(newTime * 1000 as Float64), timescale: 1000)
         player!.seek(to: time2, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
-        
     }
     
     @objc func backButtonClicked() {
-        dismiss(animated: true)
+    
+        present(destinationVC: FirstHomeVC(), slideDirection: .left)
         player?.pause()
     }
     
@@ -339,16 +312,7 @@ class SongPlayingVC: UIViewController {
             popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
             popoverController.permittedArrowDirections = []
         }
-        
         present(activityViewController, animated: true, completion: nil)
-        
-    }
-    
-    @objc func nextButtonClicked() {
-        
-        //        present(destinationVC:AllSongsVC(), slideDirection: .right)
-        //    }
-        
     }
 }
 

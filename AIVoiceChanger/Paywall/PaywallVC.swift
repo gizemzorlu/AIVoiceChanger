@@ -74,6 +74,7 @@ class PaywallVC: UIViewController {
             make.left.equalTo(image1)
             make.width.height.equalTo(210)
         }
+        
         image4.image = UIImage(named: "image4")
         view.addSubview(image4)
         image4.snp.makeConstraints { make in
@@ -86,61 +87,52 @@ class PaywallVC: UIViewController {
         premiumTitleLabel.textAlignment = .center
         premiumTitleLabel.textColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
         premiumTitleLabel.font = Font.custom(size: 34, fontWeight: .Bold)
-        
         view.addSubview(premiumTitleLabel)
         premiumTitleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(image3.snp.bottom).offset(33)
             make.width.equalTo(350)
             make.height.equalTo(41)
-            
         }
         
         premiumFeaturesLabel.text = "Limited Ads"
         premiumFeaturesLabel.textAlignment = .left
         premiumFeaturesLabel.textColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
         premiumFeaturesLabel.font = Font.custom(size: 17, fontWeight: .Medium)
-        
         view.addSubview(premiumFeaturesLabel)
         premiumFeaturesLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(69)
             make.top.equalTo(premiumTitleLabel.snp.bottom).offset(30)
             make.width.equalTo(280)
             make.height.equalTo(22)
-            
         }
         
         secondPremiumFeaturesLabel.text = "Using Example Prompts"
         secondPremiumFeaturesLabel.textAlignment = .left
         secondPremiumFeaturesLabel.textColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
         secondPremiumFeaturesLabel.font = Font.custom(size: 17, fontWeight: .Medium)
-        
         view.addSubview(secondPremiumFeaturesLabel)
         secondPremiumFeaturesLabel.snp.makeConstraints { make in
             make.left.equalTo(premiumFeaturesLabel)
             make.top.equalTo(premiumFeaturesLabel.snp.bottom).offset(9)
             make.width.equalTo(280)
             make.height.equalTo(22)
-            
         }
         
         thirdPremiumFeaturesLabel.text = "Reach All Rappers and Beats"
         thirdPremiumFeaturesLabel.textAlignment = .left
         thirdPremiumFeaturesLabel.textColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
         thirdPremiumFeaturesLabel.font = Font.custom(size: 17, fontWeight: .Medium)
-        
         view.addSubview(thirdPremiumFeaturesLabel)
         thirdPremiumFeaturesLabel.snp.makeConstraints { make in
             make.left.equalTo(premiumFeaturesLabel)
             make.top.equalTo(secondPremiumFeaturesLabel.snp.bottom).offset(9)
             make.width.equalTo(280)
             make.height.equalTo(22)
-            
         }
         
         icon.image = UIImage(named: "icon")
         view.addSubview(icon)
-        
         icon.snp.makeConstraints { make in
             make.centerY.equalTo(premiumFeaturesLabel)
             make.left.equalToSuperview().offset(54)
@@ -150,7 +142,6 @@ class PaywallVC: UIViewController {
         
         icon2.image = UIImage(named: "icon")
         view.addSubview(icon2)
-        
         icon2.snp.makeConstraints { make in
             make.centerY.equalTo(secondPremiumFeaturesLabel)
             make.left.equalToSuperview().offset(54)
@@ -160,7 +151,6 @@ class PaywallVC: UIViewController {
         
         icon3.image = UIImage(named: "icon")
         view.addSubview(icon3)
-        
         icon3.snp.makeConstraints { make in
             make.centerY.equalTo(thirdPremiumFeaturesLabel)
             make.left.equalToSuperview().offset(54)
@@ -173,30 +163,24 @@ class PaywallVC: UIViewController {
         paymentOptionButton.layer.borderWidth = 0.5
         paymentOptionButton.layer.borderColor = UIColor(red: 0.31, green: 0.34, blue: 1.00, alpha: 1.00).cgColor
         paymentOptionButton.addTarget(self, action: #selector(selectedPaymentOption), for: .touchUpInside)
-        
-        
         view.addSubview(paymentOptionButton)
         paymentOptionButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(thirdPremiumFeaturesLabel.snp.bottom).offset(20)
             make.width.equalTo(350)
             make.height.equalTo(60)
-            
         }
         
         paymentDetailLabel.text = "Lifetime"
         paymentDetailLabel.textAlignment = .left
         paymentDetailLabel.textColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
-        
         paymentDetailLabel.font = Font.custom(size: 17, fontWeight: .Medium)
-        
         paymentOptionButton.addSubview(paymentDetailLabel)
         paymentDetailLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(38)
             make.width.equalTo(90)
             make.height.equalTo(22)
-            
         }
         
         withoutPurchaseButton.setTitle("Continue without purchase", for: .normal)
@@ -204,7 +188,6 @@ class PaywallVC: UIViewController {
         withoutPurchaseButton.backgroundColor = .systemBackground
         withoutPurchaseButton.titleLabel?.font = Font.custom(size: 12, fontWeight: .Bold)
         withoutPurchaseButton.addTarget(self, action: #selector(withoutPurchaseButtonClicked), for: .touchUpInside)
-        
         view.addSubview(withoutPurchaseButton)
         withoutPurchaseButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -218,7 +201,6 @@ class PaywallVC: UIViewController {
         continueButton.isEnabled = false
         continueButton.alpha = 0.6
         continueButton.addTarget(self, action: #selector(continueButtonClicked), for: .touchUpInside)
-        
         view.addSubview(continueButton)
         continueButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -227,11 +209,8 @@ class PaywallVC: UIViewController {
             make.height.equalTo(60)
         }
         
-        
         legalView.termsURL = "https://www.neonapps.co/terms-of-use"
-        
         legalView.privacyURL = "https://www.neonapps.co/privacy-policy"
-        
         legalView.restoreButtonClicked = {
             print("restored")
         }
@@ -241,15 +220,12 @@ class PaywallVC: UIViewController {
         legalView.snp.makeConstraints { make in
             make.top.equalTo(continueButton.snp.bottom).offset(5)
             make.left.right.equalToSuperview()
-            
             make.height.equalTo(100)
         }
         
         
         circleImage.image = UIImage(named: "circle")
-        
         paymentOptionButton.addSubview(circleImage)
-        
         circleImage.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(13)
@@ -258,9 +234,7 @@ class PaywallVC: UIViewController {
         
         roundImage.image = UIImage(named: "round")
         roundImage.isHidden = true
-        
         circleImage.addSubview(roundImage)
-        
         roundImage.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.height.width.equalTo(9)
@@ -269,9 +243,7 @@ class PaywallVC: UIViewController {
         paymentAmountLabel.text = "$10"
         paymentAmountLabel.textAlignment = .center
         paymentAmountLabel.textColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
-        
         paymentAmountLabel.font = Font.custom(size: 16, fontWeight: .Medium)
-        
         paymentOptionButton.addSubview(paymentAmountLabel)
         paymentAmountLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
@@ -282,7 +254,6 @@ class PaywallVC: UIViewController {
         }
         
         shortlineImage.image = UIImage(named: "shortline")
-        
         legalView.addSubview(shortlineImage)
         shortlineImage.snp.makeConstraints { make in
             make.centerY.equalTo(legalView.privacyButton)
@@ -292,7 +263,6 @@ class PaywallVC: UIViewController {
         }
         
         shortlineImage2.image = UIImage(named: "shortline")
-        
         legalView.addSubview(shortlineImage2)
         shortlineImage2.snp.makeConstraints { make in
             make.centerY.equalTo(legalView.privacyButton)
@@ -301,21 +271,14 @@ class PaywallVC: UIViewController {
             make.height.equalTo(20)
         }
         
-        
-        
-        
     }
     
     @objc func withoutPurchaseButtonClicked() {
-        
         present(destinationVC: FirstHomeVC(), slideDirection: .right)
-        
     }
     
     @objc func continueButtonClicked() {
-        
         RevenueCatManager.selectPackage(id: "com.neonapps.education.SwiftyStoreKitDemo.Montly")
-        
         RevenueCatManager.purchase(animation: .loadingBar) {
             let vc = FirstHomeVC()
             self.present(destinationVC: vc, slideDirection: .right)
@@ -325,14 +288,11 @@ class PaywallVC: UIViewController {
     }
     
     @objc func selectedPaymentOption() {
-        
         roundImage.isHidden = false
         paymentOptionButton.layer.borderWidth = 3
-        
         continueButton.alpha = 1
         continueButton.isEnabled = true
 
-        
     }
     
     func packageFetched() {
@@ -340,11 +300,8 @@ class PaywallVC: UIViewController {
         if let price = RevenueCatManager.getPackagePrice(id: "com.neonapps.education.SwiftyStoreKitDemo.Montly"){
             let monthlyPackagePrice = price
         }
-        
         if let monthlyPackage = RevenueCatManager.getPackage(id: "com.neonapps.education.SwiftyStoreKitDemo.Montly"){
             let price = monthlyPackage.localizedPriceString
         }
-        
-        
     }
 }

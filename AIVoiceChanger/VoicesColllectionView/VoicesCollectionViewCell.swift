@@ -38,30 +38,24 @@ class VoicesCollectionViewCell: NeonCollectionViewCell<VoicesModal> {
             make.width.height.equalTo(74)
         }
         
-        
-        
         voiceView.addSubview(voiceImageView)
         voiceImageView.layer.cornerRadius = 37
         voiceImageView.clipsToBounds = true
         voiceImageView.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
             make.width.height.equalTo(74)
-            
         }
         
         
         voiceLabel.textAlignment = .center
         voiceLabel.textColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
         voiceLabel.font = Font.custom(size: 13, fontWeight: .Light)
-        
         contentView.addSubview(voiceLabel)
         voiceLabel.snp.makeConstraints { make in
             make.top.equalTo(voiceView.snp.bottom).offset(4)
             make.left.right.equalTo(voiceView)
             make.width.equalTo(74)
             make.height.equalTo(18)
-            
-            
         }
         
     }

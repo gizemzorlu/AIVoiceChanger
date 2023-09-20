@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 import NeonSDK
 import FirebaseCore
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         VoicesModal.createData()
-
+        
+        FirebaseApp.configure()
         Font.configureFonts(font: .Poppins)
     
         RevenueCatManager.configure(withAPIKey: "appl_HytrZibHrgnxLjZtMDjEVrVKjCi", products : [
@@ -28,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Neon.configure(window: &window, onboardingVC: Onboarding(), paywallVC: PaywallVC(), homeVC: FirstHomeVC())
         
-        FirebaseApp.configure()
+     
         
         return true
     }
