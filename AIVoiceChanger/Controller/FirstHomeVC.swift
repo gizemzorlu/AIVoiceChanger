@@ -37,7 +37,6 @@ class FirstHomeVC: UIViewController {
             if Globals.songArr.count > 0 {
             self.createUI()
         } else {
-          
             self.configureUI()
         }
         }

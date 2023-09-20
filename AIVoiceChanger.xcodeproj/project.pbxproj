@@ -21,8 +21,6 @@
 		115227C72AB1A8A200E0216E /* VoicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115227C62AB1A8A200E0216E /* VoicesCollectionViewCell.swift */; };
 		115227CA2AB1C6F400E0216E /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115227C92AB1C6F400E0216E /* Globals.swift */; };
 		115227CD2AB1D45600E0216E /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115227CC2AB1D45600E0216E /* ApiHandler.swift */; };
-		115342252AB31A4B00AB0543 /* AllSongsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115342242AB31A4B00AB0543 /* AllSongsVC.swift */; };
-		1156E0392AADF1AF00C6AC5A /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156E0382AADF1AF00C6AC5A /* Song.swift */; };
 		117030E32ABAF6AA007C41D0 /* GetDataFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117030E22ABAF6A9007C41D0 /* GetDataFirestore.swift */; };
 		117030E62ABB0B30007C41D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 117030E52ABB0B30007C41D0 /* GoogleService-Info.plist */; };
 		11723CDE2AB851B100189887 /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11723CDD2AB851B100189887 /* SongsCollectionViewCell.swift */; };
@@ -51,8 +49,6 @@
 		115227C62AB1A8A200E0216E /* VoicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesCollectionViewCell.swift; sourceTree = "<group>"; };
 		115227C92AB1C6F400E0216E /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		115227CC2AB1D45600E0216E /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
-		115342242AB31A4B00AB0543 /* AllSongsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSongsVC.swift; sourceTree = "<group>"; };
-		1156E0382AADF1AF00C6AC5A /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		117030E22ABAF6A9007C41D0 /* GetDataFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataFirestore.swift; sourceTree = "<group>"; };
 		117030E52ABB0B30007C41D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11723CDD2AB851B100189887 /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -88,7 +84,6 @@
 				11B2A4B12AAA0E4000A7F350 /* FirstHomeVC.swift */,
 				113848D12AAB348800D5282B /* SecondHomeVC.swift */,
 				113DFFCC2AAD0C66009F6EE6 /* SettingsVC.swift */,
-				115342242AB31A4B00AB0543 /* AllSongsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -191,7 +186,6 @@
 			children = (
 				11723CE12AB8746000189887 /* SavedSongs.swift */,
 				115227C22AB1A73B00E0216E /* VoicesModal.swift */,
-				1156E0382AADF1AF00C6AC5A /* Song.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -318,8 +312,6 @@
 				115227CD2AB1D45600E0216E /* ApiHandler.swift in Sources */,
 				11B2A49A2AAA0CCB00A7F350 /* Onboarding.swift in Sources */,
 				113848D02AAB176900D5282B /* CustomGradientButton.swift in Sources */,
-				115342252AB31A4B00AB0543 /* AllSongsVC.swift in Sources */,
-				1156E0392AADF1AF00C6AC5A /* Song.swift in Sources */,
 				113DFF4D2AAC72860002F7C2 /* SongGenerationVC.swift in Sources */,
 				115227C72AB1A8A200E0216E /* VoicesCollectionViewCell.swift in Sources */,
 				115227C52AB1A80100E0216E /* VoicesCollectionView.swift in Sources */,
