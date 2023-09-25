@@ -18,7 +18,7 @@ class FirstHomeVC: UIViewController {
     var startLabel = UILabel()
     var phraseLabel = UILabel()
     let vectorImage = UIImageView()
-    var generateButton = CustomGradientButton()
+    let generateButton = CustomGradientButton()
     let backButton = UIButton()
     
     let songTitleLabel = UILabel()
@@ -30,11 +30,9 @@ class FirstHomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GetDataFirestore.getDataFromFirestore()
-    
         view.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            if Globals.songArr.count > 0 {
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            if !Globals.songArr.isEmpty {
             self.createUI()
         } else {
             self.configureUI()

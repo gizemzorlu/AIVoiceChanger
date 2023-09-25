@@ -159,6 +159,11 @@ class SecondHomeVC: UIViewController, UITextViewDelegate {
        
         voicesCollectionView = VoicesCollectionView(didSelect: { object, IndexPath in
             print("Selected Voice: \(object.uuid)")
+            for voice in Globals.arrVoices {
+                voice.isSelected = false
+                
+            }
+            object.isSelected = true
             
             Globals.selectedVoiceUUID = object.uuid
             Globals.choosenName = object.name
@@ -166,6 +171,7 @@ class SecondHomeVC: UIViewController, UITextViewDelegate {
             Globals.choosenUUID = object.uuid
             self.vc.selectedVoiceName = object.name
             self.vc.selectedVoiceImage = object.image
+            self.voicesCollectionView.objects = Globals.arrVoices
         })
         view.addSubview(voicesCollectionView)
         voicesCollectionView.snp.makeConstraints { make in

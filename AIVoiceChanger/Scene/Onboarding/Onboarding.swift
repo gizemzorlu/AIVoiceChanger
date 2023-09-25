@@ -90,11 +90,10 @@ class Onboarding: UIViewController {
         view.addSubview(continueButton)
         continueButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(declarationLabel.snp.bottom).offset(63)
+            make.bottom.equalTo(view.snp.bottom).offset(-80)
             make.width.equalTo(350)
             make.height.equalTo(60)
         }
-                   
     }
         
     @objc func continueButtonClicked() {

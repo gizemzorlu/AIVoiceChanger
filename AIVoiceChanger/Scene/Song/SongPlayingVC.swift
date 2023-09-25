@@ -178,6 +178,8 @@ class SongPlayingVC: UIViewController {
         
         
         playButton.setImage(UIImage(named: "playview"), for: .normal)
+        playButton.setImage(UIImage(systemName: "pause.circle.fill")!, for: .selected)
+        
         playButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
         view.addSubview(playButton)
         playButton.snp.makeConstraints { make in
@@ -242,18 +244,13 @@ class SongPlayingVC: UIViewController {
     }
     
     @objc func playButtonClicked() {
-        if self.playButton.currentImage == UIImage(named: "playview") && firstTimeClicked == false {
-            firstTimeClicked = true
-            self.playButton.setImage(UIImage(named: "btn_pauseSong"), for: .normal)
+        playButton.isSelected.toggle()
+        if playButton.isSelected {
             
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
-        } else if self.playButton.currentImage == UIImage(named: "playview") && firstTimeClicked == true {
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
-            self.playButton.setImage(UIImage(named: "btn_pauseSong"), for: .normal)
             player?.play()
-        } else if self.playButton.currentImage == UIImage(named: "btn_pauseSong") {
+        } else {
             timer.invalidate()
-            self.playButton.setImage(UIImage(named: "playview"), for: .normal)
             player?.pause()
         }
     }
@@ -302,8 +299,8 @@ class SongPlayingVC: UIViewController {
     
     @objc func shareButtonClicked()  {
         
-        let shareText = "Hey, check out this cool app!"
-        let shareURL = URL(string: "https://www.example.com/your-app")
+        let shareText = "Hey, this is my cool Generation!"
+        let shareURL = URL(string: savedVoiceURL)
         
         let activityViewController = UIActivityViewController(activityItems: [shareText, shareURL as Any], applicationActivities: nil)
         

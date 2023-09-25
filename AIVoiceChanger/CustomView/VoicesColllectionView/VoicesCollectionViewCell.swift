@@ -64,6 +64,15 @@ class VoicesCollectionViewCell: NeonCollectionViewCell<VoicesModal> {
         super.configure(with: voice)
         voiceImageView.image = UIImage(named: voice.image)
         voiceLabel.text = voice.name
+        if voice.isSelected {
+            voiceImageView.layer.borderColor = UIColor(red: 0.70, green: 0.47, blue: 1.00, alpha: 1.00).cgColor
+
+            self.voiceImageView.layer.borderWidth = 4
+        } else {
+            voiceImageView.layer.borderColor = UIColor.clear.cgColor
+
+            self.voiceImageView.layer.borderWidth = 0
+        }
         
     }
             

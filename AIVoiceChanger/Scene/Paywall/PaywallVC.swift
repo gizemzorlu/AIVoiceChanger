@@ -11,7 +11,6 @@ import SnapKit
 
 class PaywallVC: UIViewController {
     
-    
     let image1 = UIImageView()
     let image2 = UIImageView()
     let image3 = UIImageView()
@@ -27,6 +26,8 @@ class PaywallVC: UIViewController {
     var paymentAmountLabel = UILabel()
     var continueButton = CustomGradientButton()
     var withoutPurchaseButton = UIButton()
+    let exitView = UIView()
+    let exitButton = UIButton()
     
     
     let legalView = NeonLegalView()
@@ -57,14 +58,16 @@ class PaywallVC: UIViewController {
         view.addSubview(image1)
         image1.snp.makeConstraints { make in
             make.top.left.equalToSuperview()
-            make.width.height.equalTo(210)
+            make.width.equalTo(190)
+            make.height.equalTo(view.snp.height).dividedBy(4)
         }
         
         image2.image = UIImage(named: "image2")
         view.addSubview(image2)
         image2.snp.makeConstraints { make in
             make.top.right.equalToSuperview()
-            make.width.height.equalTo(210)
+            make.width.equalTo(190)
+            make.height.equalTo(view.snp.height).dividedBy(4)
         }
         
         image3.image = UIImage(named: "image3")
@@ -72,7 +75,8 @@ class PaywallVC: UIViewController {
         image3.snp.makeConstraints { make in
             make.top.equalTo(image1.snp.bottom).offset(9)
             make.left.equalTo(image1)
-            make.width.height.equalTo(210)
+            make.width.equalTo(190)
+            make.height.equalTo(view.snp.height).dividedBy(4)
         }
         
         image4.image = UIImage(named: "image4")
@@ -80,7 +84,8 @@ class PaywallVC: UIViewController {
         image4.snp.makeConstraints { make in
             make.top.equalTo(image1.snp.bottom).offset(9)
             make.right.equalTo(image2)
-            make.width.height.equalTo(210)
+            make.width.equalTo(190)
+            make.height.equalTo(view.snp.height).dividedBy(4)
         }
         
         premiumTitleLabel.text = "Try Premium!"
@@ -183,19 +188,6 @@ class PaywallVC: UIViewController {
             make.height.equalTo(22)
         }
         
-        withoutPurchaseButton.setTitle("Continue without purchase", for: .normal)
-        withoutPurchaseButton.setTitleColor(UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00), for: .normal)
-        withoutPurchaseButton.backgroundColor = .systemBackground
-        withoutPurchaseButton.titleLabel?.font = Font.custom(size: 12, fontWeight: .Bold)
-        withoutPurchaseButton.addTarget(self, action: #selector(withoutPurchaseButtonClicked), for: .touchUpInside)
-        view.addSubview(withoutPurchaseButton)
-        withoutPurchaseButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(paymentOptionButton.snp.bottom).offset(10)
-            make.width.equalTo(350)
-            make.height.equalTo(20)
-        }
-        
         continueButton.setTitle("Continue", for: .normal)
         continueButton.setTitleColor(UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00), for: .normal)
         continueButton.isEnabled = false
@@ -204,7 +196,7 @@ class PaywallVC: UIViewController {
         view.addSubview(continueButton)
         continueButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(withoutPurchaseButton.snp.bottom).offset(10)
+            make.top.equalTo(paymentOptionButton.snp.bottom).offset(23)
             make.width.equalTo(350)
             make.height.equalTo(60)
         }
@@ -222,7 +214,6 @@ class PaywallVC: UIViewController {
             make.left.right.equalToSuperview()
             make.height.equalTo(100)
         }
-        
         
         circleImage.image = UIImage(named: "circle")
         paymentOptionButton.addSubview(circleImage)
@@ -271,9 +262,28 @@ class PaywallVC: UIViewController {
             make.height.equalTo(20)
         }
         
+        exitView.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor
+        exitView.layer.cornerRadius = 25
+        exitView.clipsToBounds = true
+        exitView.contentMode = .scaleAspectFit
+        view.addSubview(exitView)
+        exitView.snp.makeConstraints { (make) in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
+            make.right.equalToSuperview().inset(20)
+            make.width.height.equalTo(50)
+        }
+        
+        exitButton.setImage(UIImage(named: "exit"), for: .normal)
+        exitButton.addTarget(self, action: #selector(exitButtonClicked), for: .touchUpInside)
+        exitButton.clipsToBounds = true
+        exitView.addSubview(exitButton)
+        exitButton.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.height.equalTo(25)
+        }
     }
     
-    @objc func withoutPurchaseButtonClicked() {
+    @objc func exitButtonClicked() {
         present(destinationVC: FirstHomeVC(), slideDirection: .right)
     }
     

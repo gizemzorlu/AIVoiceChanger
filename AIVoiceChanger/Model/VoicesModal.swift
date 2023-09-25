@@ -13,12 +13,14 @@ public class VoicesModal {
     var name : String
     var image : String
     var uuid : String
+    var isSelected = false
     
     
-    init(name: String, image: String, uuid: String) {
+    init(name: String, image: String, uuid: String, isSelected: Bool = false) {
         self.name = name
         self.image = image
         self.uuid = uuid
+        self.isSelected = isSelected
     }
     static func createData(){
         

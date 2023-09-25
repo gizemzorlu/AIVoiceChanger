@@ -22,20 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         Font.configureFonts(font: .Poppins)
-    
+        GetDataFirestore.getDataFromFirestore()
         RevenueCatManager.configure(withAPIKey: "appl_HytrZibHrgnxLjZtMDjEVrVKjCi", products : [
             "com.neonapps.education.SwiftyStoreKitDemo.Montly"
-
         ])
         
         Neon.configure(window: &window, onboardingVC: Onboarding(), paywallVC: PaywallVC(), homeVC: FirstHomeVC())
-        
-     
-        
         return true
     }
-
-    
 
     // MARK: - Core Data stack
 

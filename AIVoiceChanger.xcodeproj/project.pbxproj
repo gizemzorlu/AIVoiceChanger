@@ -22,7 +22,6 @@
 		115227CA2AB1C6F400E0216E /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115227C92AB1C6F400E0216E /* Globals.swift */; };
 		115227CD2AB1D45600E0216E /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115227CC2AB1D45600E0216E /* ApiHandler.swift */; };
 		117030E32ABAF6AA007C41D0 /* GetDataFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117030E22ABAF6A9007C41D0 /* GetDataFirestore.swift */; };
-		117030E62ABB0B30007C41D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 117030E52ABB0B30007C41D0 /* GoogleService-Info.plist */; };
 		11723CDE2AB851B100189887 /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11723CDD2AB851B100189887 /* SongsCollectionViewCell.swift */; };
 		11723CE22AB8746000189887 /* SavedSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11723CE12AB8746000189887 /* SavedSongs.swift */; };
 		11B2A4962AAA0CCB00A7F350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2A4952AAA0CCB00A7F350 /* AppDelegate.swift */; };
@@ -49,8 +48,8 @@
 		115227C62AB1A8A200E0216E /* VoicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesCollectionViewCell.swift; sourceTree = "<group>"; };
 		115227C92AB1C6F400E0216E /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		115227CC2AB1D45600E0216E /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
+		115EA8672AC1853700161C7F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		117030E22ABAF6A9007C41D0 /* GetDataFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataFirestore.swift; sourceTree = "<group>"; };
-		117030E52ABB0B30007C41D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11723CDD2AB851B100189887 /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
 		11723CE12AB8746000189887 /* SavedSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSongs.swift; sourceTree = "<group>"; };
 		11B2A4922AAA0CCB00A7F350 /* AIVoiceChanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIVoiceChanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,21 +105,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		115227C82AB1C6E500E0216E /* Globals */ = {
-			isa = PBXGroup;
-			children = (
-				115227C92AB1C6F400E0216E /* Globals.swift */,
-			);
-			path = Globals;
-			sourceTree = "<group>";
-		};
-		115227CB2AB1D43D00E0216E /* Network */ = {
+		115227CB2AB1D43D00E0216E /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				115227CC2AB1D45600E0216E /* ApiHandler.swift */,
 				117030E22ABAF6A9007C41D0 /* GetDataFirestore.swift */,
 			);
-			path = Network;
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		115227D02AB2194400E0216E /* VoicesColllectionView */ = {
@@ -132,6 +123,27 @@
 			path = VoicesColllectionView;
 			sourceTree = "<group>";
 		};
+		115EA8682AC185AA00161C7F /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				117030D32ABAE5BD007C41D0 /* Onboarding */,
+				117030D42ABAE5CD007C41D0 /* Paywall */,
+				1127757C2AAEFAEF00AAEDCB /* Controller */,
+				1127757D2AAEFB1500AAEDCB /* Song */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		115EA8692AC185DE00161C7F /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				115227D02AB2194400E0216E /* VoicesColllectionView */,
+				11723CDF2AB852E100189887 /* SongsCollectionView */,
+				117030D12ABAE58D007C41D0 /* View */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		117030D12ABAE58D007C41D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,12 +152,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		117030D22ABAE5B0007C41D0 /* AppDelegate */ = {
+		117030D22ABAE5B0007C41D0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				11B2A4A12AAA0CCB00A7F350 /* Assets.xcassets */,
+				11B2A4A62AAA0CCB00A7F350 /* Info.plist */,
+				115EA8672AC1853700161C7F /* GoogleService-Info.plist */,
 				11B2A4952AAA0CCB00A7F350 /* AppDelegate.swift */,
 			);
-			path = AppDelegate;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		117030D32ABAE5BD007C41D0 /* Onboarding */ = {
@@ -167,8 +182,10 @@
 		117030E12ABAE8DA007C41D0 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				1127757F2AAEFDEE00AAEDCB /* StoreKitTestCertificate.cer */,
+				1127757E2AAEFD2600AAEDCB /* Configuration.storekit */,
+				115227C92AB1C6F400E0216E /* Globals.swift */,
 				11B2A49E2AAA0CCB00A7F350 /* AIVoiceChanger.xcdatamodeld */,
-				11B2A4A12AAA0CCB00A7F350 /* Assets.xcassets */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -181,13 +198,13 @@
 			path = SongsCollectionView;
 			sourceTree = "<group>";
 		};
-		11A283A42AB471F900BE06D7 /* Modals */ = {
+		11A283A42AB471F900BE06D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				11723CE12AB8746000189887 /* SavedSongs.swift */,
 				115227C22AB1A73B00E0216E /* VoicesModal.swift */,
 			);
-			path = Modals;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		11B2A4892AAA0CCB00A7F350 = {
@@ -210,22 +227,12 @@
 		11B2A4942AAA0CCB00A7F350 /* AIVoiceChanger */ = {
 			isa = PBXGroup;
 			children = (
+				115EA8692AC185DE00161C7F /* CustomView */,
+				115EA8682AC185AA00161C7F /* Scene */,
 				117030E12ABAE8DA007C41D0 /* Helper */,
-				11B2A4A62AAA0CCB00A7F350 /* Info.plist */,
-				1127757F2AAEFDEE00AAEDCB /* StoreKitTestCertificate.cer */,
-				1127757E2AAEFD2600AAEDCB /* Configuration.storekit */,
-				117030E52ABB0B30007C41D0 /* GoogleService-Info.plist */,
-				11A283A42AB471F900BE06D7 /* Modals */,
-				115227CB2AB1D43D00E0216E /* Network */,
-				115227C82AB1C6E500E0216E /* Globals */,
-				117030D22ABAE5B0007C41D0 /* AppDelegate */,
-				117030D32ABAE5BD007C41D0 /* Onboarding */,
-				117030D42ABAE5CD007C41D0 /* Paywall */,
-				1127757C2AAEFAEF00AAEDCB /* Controller */,
-				1127757D2AAEFB1500AAEDCB /* Song */,
-				115227D02AB2194400E0216E /* VoicesColllectionView */,
-				11723CDF2AB852E100189887 /* SongsCollectionView */,
-				117030D12ABAE58D007C41D0 /* View */,
+				11A283A42AB471F900BE06D7 /* Model */,
+				115227CB2AB1D43D00E0216E /* Manager */,
+				117030D22ABAE5B0007C41D0 /* Resources */,
 			);
 			path = AIVoiceChanger;
 			sourceTree = "<group>";
@@ -298,7 +305,6 @@
 			files = (
 				11B2A4A22AAA0CCB00A7F350 /* Assets.xcassets in Resources */,
 				112775802AAEFDEE00AAEDCB /* StoreKitTestCertificate.cer in Resources */,
-				117030E62ABB0B30007C41D0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +462,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AIVoiceChanger/Info.plist;
+				INFOPLIST_FILE = AIVoiceChanger/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -483,7 +489,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AIVoiceChanger/Info.plist;
+				INFOPLIST_FILE = AIVoiceChanger/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
