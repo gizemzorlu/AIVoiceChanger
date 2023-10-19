@@ -24,6 +24,7 @@
 		117030E32ABAF6AA007C41D0 /* GetDataFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117030E22ABAF6A9007C41D0 /* GetDataFirestore.swift */; };
 		11723CDE2AB851B100189887 /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11723CDD2AB851B100189887 /* SongsCollectionViewCell.swift */; };
 		11723CE22AB8746000189887 /* SavedSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11723CE12AB8746000189887 /* SavedSongs.swift */; };
+		1177F1AD2AE124EE007ABC5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1177F1AC2AE124EE007ABC5A /* GoogleService-Info.plist */; };
 		11B2A4962AAA0CCB00A7F350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2A4952AAA0CCB00A7F350 /* AppDelegate.swift */; };
 		11B2A49A2AAA0CCB00A7F350 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2A4992AAA0CCB00A7F350 /* Onboarding.swift */; };
 		11B2A4A02AAA0CCB00A7F350 /* AIVoiceChanger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11B2A49E2AAA0CCB00A7F350 /* AIVoiceChanger.xcdatamodeld */; };
@@ -52,6 +53,7 @@
 		117030E22ABAF6A9007C41D0 /* GetDataFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataFirestore.swift; sourceTree = "<group>"; };
 		11723CDD2AB851B100189887 /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
 		11723CE12AB8746000189887 /* SavedSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSongs.swift; sourceTree = "<group>"; };
+		1177F1AC2AE124EE007ABC5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11B2A4922AAA0CCB00A7F350 /* AIVoiceChanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIVoiceChanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B2A4952AAA0CCB00A7F350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11B2A4992AAA0CCB00A7F350 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				1127757F2AAEFDEE00AAEDCB /* StoreKitTestCertificate.cer */,
+				1177F1AC2AE124EE007ABC5A /* GoogleService-Info.plist */,
 				1127757E2AAEFD2600AAEDCB /* Configuration.storekit */,
 				115227C92AB1C6F400E0216E /* Globals.swift */,
 				11B2A49E2AAA0CCB00A7F350 /* AIVoiceChanger.xcdatamodeld */,
@@ -305,6 +308,7 @@
 			files = (
 				11B2A4A22AAA0CCB00A7F350 /* Assets.xcassets in Resources */,
 				112775802AAEFDEE00AAEDCB /* StoreKitTestCertificate.cer in Resources */,
+				1177F1AD2AE124EE007ABC5A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

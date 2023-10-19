@@ -7,8 +7,9 @@
 
 import UIKit
 import NeonSDK
+import MessageUI
 
-class SettingsVC: UIViewController {
+class SettingsVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     var settingsTitleLabel = UILabel()
     let backButton = UIButton()
@@ -163,21 +164,24 @@ class SettingsVC: UIViewController {
     
     @objc func contactButtonClicked() {
         
-        let emailAddress = "support@neonapps.co"
-            let subject = "AI Voice Changer"
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["example@gmail.com"])
+            present(mail, animated: true)
             
-            if let emailURL = URL(string: "mailto:\(emailAddress)?subject=\(subject)") {
-                UIApplication.shared.open(emailURL, options: [:], completionHandler: nil)
-            }
+        } else {
+            SettingsManager.openLinkFromBrowser(url: "")
+        }
     }
     
     @objc func termsButtonClicked() {
         
-        SettingsManager.openLinkFromBrowser(url: "https://www.neonapps.co/terms-of-use")
+        SettingsManager.openLinkFromBrowser(url: "....")
     }
     
     @objc func privacyButtonClicked() {
         
-        SettingsManager.openLinkFromBrowser(url: "https://www.neonapps.co/privacy-policy")
+        SettingsManager.openLinkFromBrowser(url: ".....")
     }
 }

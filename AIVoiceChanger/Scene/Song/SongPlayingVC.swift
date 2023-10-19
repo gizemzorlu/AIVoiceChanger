@@ -178,7 +178,7 @@ class SongPlayingVC: UIViewController {
         
         
         playButton.setImage(UIImage(named: "playview"), for: .normal)
-        playButton.setImage(UIImage(systemName: "pause.circle.fill")!, for: .selected)
+        playButton.setImage(UIImage(named: "playview"), for: .selected)
         
         playButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
         view.addSubview(playButton)

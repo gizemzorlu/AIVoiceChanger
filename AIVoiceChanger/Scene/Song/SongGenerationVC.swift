@@ -46,12 +46,12 @@ class SongGenerationVC: UIViewController {
         }
         
         let lottie = LottieManager.createLottie(animation: .loadingCircle3)
-        view.addSubview(lottie)
-        lottie.snp.makeConstraints {make in
-            make.center.equalToSuperview()
-            make.width.height.equalTo(200)
+                view.addSubview(lottie)
+                lottie.snp.makeConstraints {make in
+                    make.center.equalToSuperview()
+                    make.width.height.equalTo(200)
         }
-                                   
+
         declarationLabel.text = "Please wait while we're generating your song \nkeep the app open"
         declarationLabel.textAlignment = .center
         declarationLabel.numberOfLines = 0

@@ -47,7 +47,6 @@ public class ApiHandler {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print(error)
-                //                    completion(nil)
             } else if let data = data {
                 let str = String(data: data, encoding: .utf8)
                 print(str ?? "")
@@ -56,7 +55,7 @@ public class ApiHandler {
                         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                             if let inferenceJobToken = json["inference_job_token"] as? String {
                                 print("inference_job_token: \(inferenceJobToken)")
-                                // Şimdi inference_job_token_type'ı kullanabilirsiniz.
+                              
                                 getTTSURL(result: inferenceJobToken)
                                 
                                 DispatchQueue.main.asyncAfter(deadline: .now()+5.0){  getTTSURL(result: inferenceJobToken)}
@@ -66,9 +65,9 @@ public class ApiHandler {
                         print("JSON ayrıştırma hatası: \(error.localizedDescription)")
                     }
 
-                //                    completion(str)
+              
             } else {
-                //                    completion(nil)
+               
             }
         }
         
@@ -92,7 +91,7 @@ public class ApiHandler {
             let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
                 if let error = error {
                     print(error)
-                    // Handle the error here
+                    
                 } else {
                     let httpResponse = response as? HTTPURLResponse
                     if httpResponse!.statusCode == 200 {
@@ -127,7 +126,7 @@ public class ApiHandler {
             dataTask.resume()
         }
         
-        makeRequest() // Start the initial request
+        makeRequest() 
     }
     
     static func createPath(wav_audio_path : String) {
